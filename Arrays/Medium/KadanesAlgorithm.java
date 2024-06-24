@@ -25,7 +25,6 @@ public class KadanesAlgorithm {
                 for (int k = i; k <= j; k++) {
                     sum += arr[k];
                 }
-
                 maxi = Math.max(maxi, sum);
             }
         }
