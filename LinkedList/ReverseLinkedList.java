@@ -10,7 +10,6 @@ public class ReverseLinkedList {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
-
         // Print the linked list
         // CreateLinkedList.printLinkedList(head);
         ListNode rnode = reverseList(head);
