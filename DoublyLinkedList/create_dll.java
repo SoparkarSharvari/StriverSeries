@@ -1,7 +1,6 @@
 package DoublyLinkedList;
 
 public class create_dll {
-    
 
     public static void main(String[] args) {
         Node head = new Node(1);
@@ -16,11 +15,34 @@ public class create_dll {
 
         addNode(head,2,33);
         printLinkedList(head);
-        deleteNode(head, 3);
+        delKey(head, 2);
         printLinkedList(head);
-        printLinkedList(reverseDLL(head));
-
-
+        // deleteNode(head, 3);
+        // printLinkedList(head);
+        // printLinkedList(reverseDLL(head));
+    }
+    public static Node delKey(Node head,int key){
+        Node temp=head;
+        Node prevn=null;
+        Node newn=null;
+        while(temp!=null){
+            if(temp.data==key){
+                if(temp==head){
+                    head=head.next;
+                }
+                newn=temp.next;
+                prevn=temp.prev;
+                if(newn!=null){
+                    newn.prev=prevn;
+                }
+                if(prevn!=null){
+                    prevn.next=newn;
+                }
+                temp=newn;
+            }
+            else{temp=temp.next;}
+        }
+        return head;
     }
     public static void addNode(Node head_ref, int pos, int data)
 	{
@@ -50,10 +72,11 @@ public class create_dll {
             ptr=ptr.next;
             i++;
         }
+
         ptr.prev=prev.prev;
         prev.prev.next=ptr;
     }
-
+    
     public static void printLinkedList(Node head){
         Node current = head;
         while (current != null) {
