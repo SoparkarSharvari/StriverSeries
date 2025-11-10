@@ -24,4 +24,18 @@ public class CreateLinkedList {
         }
         System.out.println();
     }
+
+    public static ListNode createLL(int[] arr) {
+        if (arr == null || arr.length == 0) return null;
+
+        ListNode head = new ListNode(arr[0]);
+        ListNode current = head;
+
+        for (int i = 1; i < arr.length; i++) {
+            ListNode temp = new ListNode(arr[i]);
+            current.next = temp;
+            current = temp;
+        }
+        return head;
+    }
 }
