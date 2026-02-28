@@ -1,4 +1,4 @@
-package Arrays.Easy;
+package BinarySearch.BSon1DArrays;
 public class SearchElement_Rotated_Sorted_Array{
     public static void main(String[] args){
         int[] arr = {4,5,5,6,7,0,0,1,2};

@@ -1,4 +1,4 @@
-package Arrays.Easy;
+package BinarySearch.BSon1DArrays;
 
 public class minInRotatedSortedArray {
     public static void main(String[] args){

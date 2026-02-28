@@ -1,4 +1,4 @@
-package Arrays.Easy;
+package BinarySearch.BSon1DArrays;
 
 public class Floor_ceil_in_sorted_array {
     public static void main(String[] args) {
