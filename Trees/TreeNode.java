@@ -109,41 +109,41 @@ class BinaryTree {
     }
     public static void main(String[] args) {
        
-        Scanner sc = new Scanner(System.in);
-        System.out.println("enter size of array :");
-        int N = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("enter size of array :");
+            int N = sc.nextInt();
 
-        System.out.println("enter array :");
-        int[] arr = new int[N];
-        for(int i=0 ;i<N ;i++){
-            arr[i] = sc.nextInt();
+            System.out.println("enter array :");
+            int[] arr = new int[N];
+            for(int i=0 ;i<N ;i++){
+                arr[i] = sc.nextInt();
+            }
+            BinaryTree tree = new BinaryTree();
+            tree.root = tree.insertLevelOrder(arr, tree.root, 0);
+            tree.inOrder(tree.root);
+            System.out.println();
+            tree.preOrder(tree.root);
+            System.out.println();
+            tree.postOrder(tree.root);
+
+            ArrayList<Integer> inorderList = new ArrayList<>();
+            ArrayList<Integer> preorderList = new ArrayList<>();
+            ArrayList<Integer> postorderList = new ArrayList<>();
+
+            tree.togetherOrder(tree.root, inorderList, preorderList, postorderList);
+
+            // Printing the traversals
+            System.out.print("Inorder Traversal: ");
+            printList(inorderList);
+            System.out.println();
+
+            System.out.print("Preorder Traversal: ");
+            printList(preorderList);
+            System.out.println();
+
+            System.out.print("Postorder Traversal: ");
+            printList(postorderList);
+            System.out.println();
         }
-        BinaryTree tree = new BinaryTree();
-        tree.root = tree.insertLevelOrder(arr, tree.root, 0);
-        tree.inOrder(tree.root);
-        System.out.println();
-        tree.preOrder(tree.root);
-        System.out.println();
-        tree.postOrder(tree.root);
-
-        ArrayList<Integer> inorderList = new ArrayList<>();
-        ArrayList<Integer> preorderList = new ArrayList<>();
-        ArrayList<Integer> postorderList = new ArrayList<>();
-
-        tree.togetherOrder(tree.root, inorderList, preorderList, postorderList);
-
-        // Printing the traversals
-        System.out.print("Inorder Traversal: ");
-        printList(inorderList);
-        System.out.println();
-
-        System.out.print("Preorder Traversal: ");
-        printList(preorderList);
-        System.out.println();
-
-        System.out.print("Postorder Traversal: ");
-        printList(postorderList);
-        System.out.println();
-        
     }
 }

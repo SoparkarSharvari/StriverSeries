@@ -1,0 +1,4 @@
+{
+    "salesforce.einsteinForDevelopers.enableBackgroundTerminal": true,
+    "github.copilot.chat.backgroundAgent.enabled": true
+}
