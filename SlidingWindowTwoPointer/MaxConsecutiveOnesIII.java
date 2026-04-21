@@ -15,6 +15,7 @@ public class MaxConsecutiveOnesIII {
         }
         int result = longestOnes(arr, k);
         System.out.println("Maximum number of consecutive 1s: " + result);
+        sc.close();
     }
     public static int longestOnes(int[] nums, int k) {
         int left=0,right;
